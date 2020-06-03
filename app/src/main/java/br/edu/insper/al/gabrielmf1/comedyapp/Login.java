@@ -37,9 +37,17 @@ public class Login extends AppCompatActivity {
                 if (email.equals("")){
                     Toast.makeText(Login.this, "Insira um Email válido", Toast.LENGTH_SHORT).show();
                 }
-                else if (etPass.equals("")){
-                    Toast.makeText(Login.this, "Insira um Email válido", Toast.LENGTH_SHORT).show();
+                else if (pass.equals("")){
+                    Toast.makeText(Login.this, "Insira uma senha válida", Toast.LENGTH_SHORT).show();
                 }
+                else{
+                }
+            }
+        });
+
+        tvReg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
             }
         });
