@@ -30,6 +30,9 @@ public class Login extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent i = new Intent(Login.this, Perfil.class);
+                startActivity(i);
+                finish();
                 String email,pass;
 
                 email = etEmail.getText().toString();
