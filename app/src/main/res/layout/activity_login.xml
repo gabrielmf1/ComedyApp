@@ -84,7 +84,7 @@
         app:layout_constraintTop_toTopOf="@+id/loginBtn" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/nav_user_mail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Novo usuário"

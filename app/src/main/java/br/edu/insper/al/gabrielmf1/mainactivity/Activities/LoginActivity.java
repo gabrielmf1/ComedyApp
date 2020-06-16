@@ -1,8 +1,5 @@
 package br.edu.insper.al.gabrielmf1.mainactivity.Activities;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -11,6 +8,9 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -39,7 +39,7 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin = findViewById(R.id.loginBtn);
         loginProgress = findViewById(R.id.login_progress);
         mAuth = FirebaseAuth.getInstance();
-        HomeActivity = new Intent(this,br.edu.insper.al.gabrielmf1.mainactivity.Activities.HomeActivity.class);
+        HomeActivity = new Intent(this,br.edu.insper.al.gabrielmf1.mainactivity.Activities.Home.class);
         loginPhoto = findViewById(R.id.login_photo);
         loginPhoto.setOnClickListener(new View.OnClickListener() {
             @Override
