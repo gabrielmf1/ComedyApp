@@ -378,7 +378,7 @@ public class Home extends AppCompatActivity
 
         } else if (id == R.id.nav_settings) {
 
-            getSupportActionBar().setTitle("Settings");
+            getSupportActionBar().setTitle("Feed");
             getSupportFragmentManager().beginTransaction().replace(R.id.container,new SettingsFragment()).commit();
 
 
