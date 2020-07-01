@@ -3,6 +3,11 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/ComedyApp.iml" filepath="$PROJECT_DIR$/.idea/modules/ComedyApp.iml" group="ComedyApp" />
+<<<<<<< HEAD
+=======
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/ComedyApp-app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/ComedyApp-app.iml" group="ComedyApp/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/DesAgil-ComedyApp.iml" filepath="$PROJECT_DIR$/.idea/modules/DesAgil-ComedyApp.iml" group="ComedyApp" />
+>>>>>>> 702fd057b77258a3074f713d20fabe9880ecd408
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="ComedyApp/app" />
     </modules>
   </component>

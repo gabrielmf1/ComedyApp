@@ -4,8 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+<<<<<<< HEAD
     tools:context=".Fragments.ProfileFragment"
     android:background="@color/white">
+=======
+    tools:context="br.edu.insper.al.gabrielmf1.comedyapp.Fragments.ProfileFragment">
+>>>>>>> 702fd057b77258a3074f713d20fabe9880ecd408
 
     <ImageView
         android:id="@+id/nav_user_photo"
