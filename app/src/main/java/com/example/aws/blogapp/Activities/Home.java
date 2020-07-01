@@ -155,9 +155,6 @@ public class Home extends AppCompatActivity
     }
 
 
-
-
-
     private void openGallery() {
         //TODO: open gallery intent and wait for user to pick an image !
 
