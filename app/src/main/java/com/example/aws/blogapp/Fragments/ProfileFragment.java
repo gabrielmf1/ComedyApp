@@ -28,14 +28,6 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.UploadTask;
 
 import java.util.ArrayList;
 
@@ -52,10 +44,8 @@ public class ProfileFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-    Dialog popAddPost ;
     FirebaseAuth mAuth;
     FirebaseUser currentUser ;
-    ImageView popupUserImage;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -109,6 +99,18 @@ public class ProfileFragment extends Fragment {
     public void onStart() {
         super.onStart();
 
+        TextView navUsername = getActivity().findViewById(R.id.prof_username);
+        TextView navUserMail = getActivity().findViewById(R.id.prof_user_mail);
+        ImageView navUserPhot = getActivity().findViewById(R.id.prof_user_photo);
+
+        navUserMail.setText(currentUser.getEmail());
+        navUsername.setText(currentUser.getDisplayName());
+
+        // now we will use Glide to load user image
+        // first we need to import the library
+
+        Glide.with(this).load(currentUser.getPhotoUrl()).into(navUserPhot);
+
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -146,36 +148,4 @@ public class ProfileFragment extends Fragment {
 
     }
 
-    public void updateNavHeader() {
-
-
-        TextView navUsername = getActivity().findViewById(R.id.nav_username);
-        TextView navUserMail = getActivity().findViewById(R.id.nav_user_mail);
-        ImageView navUserPhot = getActivity().findViewById(R.id.nav_user_photo);
-
-        navUserMail.setText(currentUser.getEmail());
-        navUsername.setText(currentUser.getDisplayName());
-
-        // now we will use Glide to load user image
-        // first we need to import the library
-
-        Glide.with(this).load(currentUser.getPhotoUrl()).into(navUserPhot);
-
-
-
-
-    }
-
-    private void iniPopup() {
-
-        // ini popup widgets
-        popupUserImage = popAddPost.findViewById(R.id.popup_user_image);
-
-        // load Current user profile photo
-
-        Glide.with(this).load(currentUser.getPhotoUrl()).into(popupUserImage);
-
-        }
-
-
-    }
+}
