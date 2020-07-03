@@ -1,21 +1,23 @@
 package com.example.aws.blogapp.Fragments;
 
+import android.content.ClipData;
 import                                                                                                                              android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
+
 import com.example.aws.blogapp.Activities.Comediantes;
 import com.example.aws.blogapp.Activities.Eventos;
-import com.example.aws.blogapp.Activities.HomeActivity;
 import com.example.aws.blogapp.Activities.Videos;
 import com.example.aws.blogapp.R;
 
@@ -73,9 +75,53 @@ public class SettingsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_settings, container, false);
+
+        View view =  inflater.inflate(R.layout.fragment_settings, container, false);
+
+        Button comediantes = (Button) view.findViewById(R.id.comediants);
+        comediantes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                FragmentActivity act = getActivity();
+
+                if (act != null) {
+                    startActivity(new Intent(act, Comediantes.class));
+                }
+            }
+        });
+
+        Button eventos = (Button) view.findViewById(R.id.events);
+        eventos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                FragmentActivity act = getActivity();
+
+                if (act != null) {
+                    startActivity(new Intent(act, Eventos.class));
+                }
+
+            }
+        });
+
+        Button videos = (Button) view.findViewById(R.id.videos);
+        videos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                FragmentActivity act = getActivity();
+
+                if (act != null) {
+                    startActivity(new Intent(act, Videos.class));
+                }
+
+            }
+        });
+
+        return view;
     }
+
 
 
 
