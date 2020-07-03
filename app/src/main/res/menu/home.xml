@@ -2,9 +2,10 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:visible="false"
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:title="@string/action_settings"
-        app:showAsAction="never" />
+        android:id="@+id/sair"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:icon="@drawable/ic_exit_to_app_black_24dp"
+        app:showAsAction="ifRoom"
+        android:title="Tem certeza que quer sair?" />
 </menu>

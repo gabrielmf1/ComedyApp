@@ -8,8 +8,8 @@
 
     <Button
         android:id="@+id/out"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:background="@drawable/ic_exit_to_app_black_24dp"
         app:layout_anchor="@+id/appBarLayout"
         app:layout_anchorGravity="end|bottom" />

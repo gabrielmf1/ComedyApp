@@ -344,31 +344,12 @@ public class Home extends AppCompatActivity
         //noinspection SimplifiableIfStatement
         int id = item.getItemId();
 
-        if (id == R.id.feed) {
-
-            getSupportActionBar().setTitle("Feed");
-
-        }
-
-        if (id == R.id.profile) {
-
-            getSupportActionBar().setTitle("Profile");
-
-        }
-
-        if (id == R.id.home) {
-
-            getSupportActionBar().setTitle("Home");
-
-
-        }
-        else if (id == R.id.nav_signout) {
+        if (id == R.id.sair) {
 
             FirebaseAuth.getInstance().signOut();
             Intent loginActivity = new Intent(getApplicationContext(),LoginActivity.class);
             startActivity(loginActivity);
             finish();
-
 
         }
 
