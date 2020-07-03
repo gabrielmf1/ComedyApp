@@ -3,6 +3,7 @@ package com.example.aws.blogapp.Fragments;
 import android.content.ClipData;
 import                                                                                                                              android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -14,6 +15,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 
 import com.example.aws.blogapp.Activities.Comediantes;

@@ -23,6 +23,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -49,7 +50,6 @@ import com.google.firebase.storage.UploadTask;
 public class Home extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-
     private static final int PReqCode = 2 ;
     private static final int REQUESCODE = 2 ;
     FirebaseAuth mAuth;
@@ -59,7 +59,7 @@ public class Home extends AppCompatActivity
     TextView popupTitle,popupDescription;
     ProgressBar popupClickProgress;
     private Uri pickedImgUri = null;
-
+    private Button feed, profile, home, out;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,10 +73,46 @@ public class Home extends AppCompatActivity
         mAuth = FirebaseAuth.getInstance();
         currentUser = mAuth.getCurrentUser();
 
+        feed = findViewById(R.id.feed);
+        profile = findViewById(R.id.profile);
+        home = findViewById(R.id.home);
+        out = findViewById(R.id.out);
+
+        feed.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setTitle("Feed");
+                getSupportFragmentManager().beginTransaction().replace(R.id.container,new HomeFragment()).commit();
+            }
+        });
+
+        profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getSupportFragmentManager().beginTransaction().replace(R.id.container,new ProfileFragment()).commit();
+            }
+        });
+
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getSupportFragmentManager().beginTransaction().replace(R.id.container,new SettingsFragment()).commit();
+            }
+        });
+
+        out.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseAuth.getInstance().signOut();
+                Intent loginActivity = new Intent(getApplicationContext(),LoginActivity.class);
+                startActivity(loginActivity);
+                finish();            }
+        });
+
+
         // ini popup
         iniPopup();
         setupPopupImageClick();
-
 
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -96,20 +132,15 @@ public class Home extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-
         updateNavHeader();
-
 
         // set the home fragment as the default one
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.container,new HomeFragment()).commit();
-
-
+        getSupportFragmentManager().beginTransaction().replace(R.id.container,new SettingsFragment()).commit();
 
     }
 
     private void setupPopupImageClick() {
-
 
         popupPostImage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -119,15 +150,10 @@ public class Home extends AppCompatActivity
                 // we did this before in register activity I'm just going to copy the code to save time ...
 
                 checkAndRequestForPermission();
-
-
             }
         });
 
-
-
     }
-
 
     private void checkAndRequestForPermission() {
 
@@ -151,9 +177,7 @@ public class Home extends AppCompatActivity
         else
             // everything goes well : we have permission to access user gallery
             openGallery();
-
     }
-
 
     private void openGallery() {
         //TODO: open gallery intent and wait for user to pick an image !
@@ -162,8 +186,6 @@ public class Home extends AppCompatActivity
         galleryIntent.setType("image/*");
         startActivityForResult(galleryIntent,REQUESCODE);
     }
-
-
 
     // when user picked an image ...
     @Override
@@ -179,13 +201,7 @@ public class Home extends AppCompatActivity
 
         }
 
-
     }
-
-
-
-
-
 
     private void iniPopup() {
 
@@ -248,8 +264,6 @@ public class Home extends AppCompatActivity
 
                                     addPost(post);
 
-
-
                                 }
                             }).addOnFailureListener(new OnFailureListener() {
                                 @Override
@@ -260,21 +274,11 @@ public class Home extends AppCompatActivity
                                     popupClickProgress.setVisibility(View.INVISIBLE);
                                     popupAddBtn.setVisibility(View.VISIBLE);
 
-
-
                                 }
                             });
 
-
                         }
                     });
-
-
-
-
-
-
-
 
                 }
                 else {
@@ -284,12 +288,8 @@ public class Home extends AppCompatActivity
 
                 }
 
-
-
             }
         });
-
-
 
     }
 
@@ -366,7 +366,7 @@ public class Home extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_home) {
+        if (id == R.id.feed) {
 
             getSupportActionBar().setTitle("Feed");
             getSupportFragmentManager().beginTransaction().replace(R.id.container,new HomeFragment()).commit();
@@ -418,6 +418,7 @@ public class Home extends AppCompatActivity
 
 
     }
+
 
 
 }
