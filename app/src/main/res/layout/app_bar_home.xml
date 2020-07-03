@@ -6,37 +6,31 @@
     android:layout_height="match_parent"
     tools:context=".Activities.Home">
 
+    <Button
+        android:id="@+id/out"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/ic_exit_to_app_black_24dp"
+        app:layout_anchor="@+id/appBarLayout"
+        app:layout_anchorGravity="end|bottom" />
+
     <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.AppBarOverlay">
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
-            android:layout_width="0dp"
-            android:layout_height="0dp"/>
-
-    </android.support.design.widget.AppBarLayout>
-
-    <android.support.design.widget.AppBarLayout
-        android:id="@+id/appBarLayout"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:theme="@style/AppTheme.AppBarOverlay">
-
-        <Button
-            android:id="@+id/out"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="7dp"
-            android:background="@drawable/ic_exit_to_app_black_24dp"
-            app:layout_anchorGravity="start|center" />
-
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"/>
 
     </android.support.design.widget.AppBarLayout>
 
 
-    <include layout="@layout/content_home" />
+    <include
+        android:id="@+id/include2"
+        layout="@layout/content_home" />
 
     <include
         android:id="@+id/include"
