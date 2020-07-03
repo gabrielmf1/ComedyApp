@@ -15,11 +15,12 @@
         app:layout_constraintGuide_percent="0.5" />
 
     <Button
-        android:id="@+id/editBtn"
+        android:id="@+id/comediants"
         android:layout_width="120dp"
         android:layout_height="140dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:background="@drawable/comediante"
@@ -30,7 +31,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/editBtn2"
+        android:id="@+id/events"
         android:layout_width="120dp"
         android:layout_height="140dp"
         android:layout_marginStart="8dp"
@@ -41,14 +42,14 @@
         android:layout_marginBottom="20dp"
         android:background="@drawable/evento"
         android:textColor="#fff"
-        app:layout_constraintBottom_toTopOf="@+id/editBtn3"
+        app:layout_constraintBottom_toTopOf="@+id/videos"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editBtn" />
+        app:layout_constraintTop_toBottomOf="@+id/comediants" />
 
     <Button
-        android:id="@+id/editBtn3"
+        android:id="@+id/videos"
         android:layout_width="120dp"
         android:layout_height="140dp"
         android:layout_marginStart="8dp"

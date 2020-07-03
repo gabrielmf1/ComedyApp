@@ -1,13 +1,22 @@
 package com.example.aws.blogapp.Fragments;
 
-import android.content.Context;
+import                                                                                                                              android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.example.aws.blogapp.Activities.Comediantes;
+import com.example.aws.blogapp.Activities.Eventos;
+import com.example.aws.blogapp.Activities.HomeActivity;
+import com.example.aws.blogapp.Activities.Videos;
 import com.example.aws.blogapp.R;
 
 /**
@@ -67,6 +76,9 @@ public class SettingsFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_settings, container, false);
     }
+
+
+
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
